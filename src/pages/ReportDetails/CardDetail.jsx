@@ -23,7 +23,7 @@ function CardDetail({id , data}) {
     const docRef = doc(db, 'posts', id)
     const getLoggedInUserData = async ()=>{
         try {
-            const docRef = doc(db, "users", auth.currentUser.uid);
+            const docRef = doc(db, "users", data?.uid);
                 const docSnap = await getDoc(docRef);
                 if (docSnap.exists()) {
                     setUserData(docSnap?.data());
